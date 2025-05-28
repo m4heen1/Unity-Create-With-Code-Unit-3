@@ -5,12 +5,14 @@ public class PlayerControl : MonoBehaviour
     private Rigidbody playerRb;
     public float jumpforce = 10;
     public float gravityModifer;
-    public bool is Onground = true 
+    public bool isOnground = true;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
         Physics.gravity *= gravityModifer;
+        
         
     }
 
@@ -23,9 +25,10 @@ public class PlayerControl : MonoBehaviour
       }  
     }
     
+    
     private void OnCollisionEnter(Collision collision)
     {
-        isOnground = true; 
+      isOnground = true;
     }
 }
 
